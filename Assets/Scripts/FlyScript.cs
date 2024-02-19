@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TouchPhase = UnityEngine.TouchPhase;
 
 public class FlyScript : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class FlyScript : MonoBehaviour
         if (canFlap)
         {
             if ((Mouse.current != null && Mouse.current.leftButton.wasPressedThisFrame) ||
-                (Touchscreen.current != null && Touchscreen.current.wasUpdatedThisFrame))
+                Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 if (!_flapped)
                 {
