@@ -5,6 +5,8 @@ using TouchPhase = UnityEngine.TouchPhase;
 
 public class FlyScript : MonoBehaviour
 {
+    public static event Action deathEvent;
+
     [SerializeField] private float speed = 5f;
     [SerializeField] private float rotation = 10f;
 
@@ -36,7 +38,7 @@ public class FlyScript : MonoBehaviour
                 if (!_flapped)
                 {
                     _flapped = true;
-                    _rb.gravityScale = 1f;
+                    _rb.gravityScale = 0.8f;
                     GameManagerScript.Instance.StartFlapping();
                     PipeManagerScript.Instance.BeginSpawnCycle();
                 }
@@ -55,9 +57,13 @@ public class FlyScript : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D other)
     {
-        audioSource.PlayOneShot(audioFall);
-        audioSource.PlayOneShot(audioDie);
-        canFlap = false;
-        GameManagerScript.Instance.GameOver();
+        deathEvent();
+        if (canFlap)
+        {
+            audioSource.PlayOneShot(audioFall);
+            audioSource.PlayOneShot(audioDie);
+            canFlap = false;
+            GameManagerScript.Instance.GameOver();
+        }
     }
 }

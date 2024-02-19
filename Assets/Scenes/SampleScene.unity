@@ -443,6 +443,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pipe
       objectReference: {fileID: 0}
+    - target: {fileID: 8160448784736483178, guid: 63421fb8047621045aa93f3315301773, type: 3}
+      propertyPath: m_Size.x
+      value: 0.014806271
+      objectReference: {fileID: 0}
+    - target: {fileID: 8160448784736483178, guid: 63421fb8047621045aa93f3315301773, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.00427239
+      objectReference: {fileID: 0}
     - target: {fileID: 8770120619027154844, guid: 63421fb8047621045aa93f3315301773, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.12
@@ -885,7 +893,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.23, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -894,9 +902,9 @@ BoxCollider2D:
     adaptiveTilingThreshold: 0.5
     drawMode: 2
     adaptiveTiling: 0
-  m_AutoTiling: 1
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.68, y: 0.56}
+  m_Size: {x: 12.36, y: 0.55}
   m_EdgeRadius: 0
 --- !u!212 &523473641
 SpriteRenderer:
@@ -959,7 +967,7 @@ Transform:
   m_GameObject: {fileID: 523473639}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.4, y: -1.1, z: 0}
+  m_LocalPosition: {x: 0.534, y: -1.104, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2232,7 +2240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30d2fbf3f57621e46ac2be5ab64a8a27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxTime: 1.5
+  maxTime: 1.6
   heightRange: 0.55
   pipe: {fileID: 4294974662855933669, guid: 63421fb8047621045aa93f3315301773, type: 3}
   audioSource: {fileID: 77418749}
@@ -2363,12 +2371,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1312400777435075566, guid: fb88b757ab098444d981f634cf21b532, type: 3}
+      propertyPath: speed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1312400777435075566, guid: fb88b757ab098444d981f634cf21b532, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 77418749}
     - target: {fileID: 3758259569667929558, guid: fb88b757ab098444d981f634cf21b532, type: 3}
       propertyPath: m_Name
       value: Bird
+      objectReference: {fileID: 0}
+    - target: {fileID: 4507605805724818190, guid: fb88b757ab098444d981f634cf21b532, type: 3}
+      propertyPath: m_Constraints
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5524169850542091571, guid: fb88b757ab098444d981f634cf21b532, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6154229525948172353, guid: fb88b757ab098444d981f634cf21b532, type: 3}
       propertyPath: m_LocalPosition.x

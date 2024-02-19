@@ -18,6 +18,15 @@ public class PipeManagerScript : MonoBehaviour
     private float _timer = 0f;
     private bool _flapped = false;
 
+    private void Awake()
+    {
+        //Stop spawning when dead
+        FlyScript.deathEvent += () =>
+        {
+            _flapped = false;
+        };
+    }
+
     private void Start()
     {
         if (Instance == null)
@@ -54,4 +63,6 @@ public class PipeManagerScript : MonoBehaviour
         
         Destroy(spawnedPipe, 10f);
     }
+    
+    
 }

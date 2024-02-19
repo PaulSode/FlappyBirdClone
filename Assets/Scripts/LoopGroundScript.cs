@@ -13,6 +13,15 @@ public class LoopGroundScript : MonoBehaviour
 
     private Vector2 _startSize;
 
+    private void Awake()
+    {
+        //Stop moving on death
+        FlyScript.deathEvent += () =>
+        {
+            speed = 0;
+        };
+    }
+
     private void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -21,11 +30,14 @@ public class LoopGroundScript : MonoBehaviour
 
     private void Update()
     {
-        _spriteRenderer.size = new Vector2(_spriteRenderer.size.x + speed * Time.deltaTime, _spriteRenderer.size.y);
-
-        if (_spriteRenderer.size.x > _width)
+        if (speed > 0)
         {
-            _spriteRenderer.size = _startSize;
+            _spriteRenderer.size = new Vector2(_spriteRenderer.size.x + speed * Time.deltaTime, _spriteRenderer.size.y);
+
+            if (_spriteRenderer.size.x > _width)
+            {
+                _spriteRenderer.size = _startSize;
+            }
         }
     }
 }
