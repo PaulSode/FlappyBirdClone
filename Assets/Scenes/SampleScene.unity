@@ -1535,7 +1535,7 @@ GameObject:
   - component: {fileID: 1102837928}
   - component: {fileID: 1102837927}
   m_Layer: 0
-  m_Name: FPSManager
+  m_Name: AndroidFPSManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2241,7 +2241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxTime: 1.6
-  heightRange: 0.55
+  heightRange: 0.5
   pipe: {fileID: 4294974662855933669, guid: 63421fb8047621045aa93f3315301773, type: 3}
   audioSource: {fileID: 77418749}
 --- !u!4 &1797830702
